@@ -13,7 +13,7 @@
     "lib"
   ],
   "publishConfig": {
-    "registry": "http://registry.npm.taobao.org"
+    "registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,5 @@
   "bugs": {
     "url": "https://github.com/doublechenfor/vue_Componentized/issues"
   },
-  "gitHead": "89e718e746b7e3399b7acf6cb79d5611ecd07c35"
+  "gitHead": "fbe5e3483c0b44c671ae805a8a6ea3ecf6d7d887"
 }
