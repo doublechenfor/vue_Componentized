@@ -1,6 +1,6 @@
-import Layout from '@cs-com/cslayoutbox'
-import headerNav from '@cs-com/csheadernav'
-import container from '@cs-com/cscontainerbox'
+import Layout from 'cs-com/cslayoutbox'
+import headerNav from 'cs-com/csheadernav'
+import container from 'cs-com/cscontainerbox'
 const components = [
     Layout,
     headerNav,
