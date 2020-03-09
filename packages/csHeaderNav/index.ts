@@ -1,8 +1,6 @@
-import headerNav from './lib/index.vue'
-
+import headerNav from './src/index.vue'
 export default {
-    install = function (Vue) {
+    install(Vue) {
         Vue.component(headerNav.name, headerNav)
     }
-
 }

@@ -1,13 +1,12 @@
 <template>
   <div>
-    <h2>{{timeCutDown}}</h2>
+    <!-- <h2>{{timeCutDown}}</h2> -->
     <layoutBox />
   </div>
 </template>
 <script lang="ts">
-// import Vue from "vue";
 import { Component, Vue } from "vue-property-decorator";
-import layoutBox from "../packages/layoutBox";
+import layoutBox from "../packages/csLayoutBox";
 
 @Component({
   components: {

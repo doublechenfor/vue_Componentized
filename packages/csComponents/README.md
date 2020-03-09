@@ -1,11 +1,11 @@
-# `layoutBox`
+# `csComponents`
 
 > TODO: description
 
 ## Usage
 
 ```
-const layoutBox = require('layoutBox');
+const csComponents = require('csComponents');
 
 // TODO: DEMONSTRATE API
 ```

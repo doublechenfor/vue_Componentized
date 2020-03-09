@@ -1,11 +1,11 @@
-# `csPersonalBox`
+# `csLayoutBox`
 
 > TODO: description
 
 ## Usage
 
 ```
-const csPersonalBox = require('csPersonalBox');
+const csLayoutBox = require('csLayoutBox');
 
 // TODO: DEMONSTRATE API
 ```
