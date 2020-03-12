@@ -1,22 +1,25 @@
 <template>
   <div>
     <!-- <h2>{{timeCutDown}}</h2> -->
+    <headerNav />
     <layoutBox />
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import layoutBox from "cs-com-cslayoutbox";
+import headerNav from "cs-com-csheaderbox";
 
 @Component<any>({
   components: {
-    layoutBox
+    layoutBox,
+    headerNav
   }
 })
 export default class App extends Vue {
   timeCutDown: any = "";
   mounted() {
-    console.log("haha", this);
+    console.log("ppp", this);
     // this['$comment'].show({ commentBoxStatus: true, stars: 5 });
     // setTimeout(() => {
     //   this['$comment'].hide();
