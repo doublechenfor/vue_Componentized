@@ -1,8 +1,9 @@
 0 silly argv {
-0 silly argv   _: [ 'publish' ],
-0 silly argv   composed: 'publish',
+0 silly argv   _: [ 'add' ],
+0 silly argv   globs: [],
 0 silly argv   lernaVersion: '3.20.2',
-0 silly argv   '$0': 'lerna'
+0 silly argv   '$0': 'lerna',
+0 silly argv   pkg: 'cs-com-cslayoutbox'
 0 silly argv }
 1 notice cli v3.20.2
 2 verbose rootPath /Users/chenshuang/work/github_something/vue_ts_test

@@ -1,6 +1,7 @@
 {
   "types": [
-    "node"
+    "node",
+    "./node_modules/vue/types"
   ],
   // 编译选项
   "compilerOptions": {
