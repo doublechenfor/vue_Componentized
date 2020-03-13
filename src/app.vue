@@ -1,25 +1,24 @@
 <template>
   <div>
     <!-- <h2>{{timeCutDown}}</h2> -->
-    <headerNav />
+    <headerBox />
     <layoutBox />
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import layoutBox from "cs-com-cslayoutbox";
-import headerNav from "cs-com-csheaderbox";
+import headerBox from "cs-com-csheaderbox";
 
 @Component<any>({
   components: {
     layoutBox,
-    headerNav
+    headerBox
   }
 })
 export default class App extends Vue {
   timeCutDown: any = "";
   mounted() {
-    console.log("ppp", this);
     // this['$comment'].show({ commentBoxStatus: true, stars: 5 });
     // setTimeout(() => {
     //   this['$comment'].hide();
@@ -33,3 +32,20 @@ export default class App extends Vue {
   }
 }
 </script>
+<style lang="scss">
+html,body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; } 
+body, button, input, select, textarea { font:14px} 
+h1, h2, h3, h4, h5, h6{ font-size:100%; } 
+address, cite, dfn, em, var { font-style:normal; } 
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; } 
+small{ font-size:12px; } 
+ul, ol { list-style:none; } 
+a { text-decoration:none; } 
+a:hover { text-decoration:underline; } 
+sup { vertical-align:text-top; } 
+sub{ vertical-align:text-bottom; } 
+legend { color:#000; } 
+fieldset, img { border:0; } 
+button, input, select, textarea { font-size:100%; } 
+table { border-collapse:collapse; border-spacing:0; } 
+</style>
