@@ -27,18 +27,19 @@ export default Vue.extend({
   height: 32px;
   border: 2px solid #e1251b;
   display: grid;
-  grid-template-columns: 89.02% 10.98%;
+  grid-template-columns: 88.02% 12%;
   grid-template-rows: 100%;
   justify-content: center;
+  position: absolute;
   .searchbox {
-      position: relative;
+    min-width: 350px;
+    position: relative;
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     padding: 2px 44px 2px 17px;
     input {
       width: 100%;
-      min-width: 430px;
       height: 26px;
       border: none;
     }
@@ -51,7 +52,7 @@ export default Vue.extend({
     }
   }
   .searchbtn {
-    width: 58px;
+    width: 100%;
     height: 32px;
     background-color: #e1251b;
     display: flex;

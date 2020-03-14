@@ -5,7 +5,7 @@
   "author": "chenshuang99 <chenshuang_soleage@163.com>",
   "homepage": "https://github.com/doublechenfor/vue_Componentized#readme",
   "license": "ISC",
-  "main": "index.js",
+  "main": "lib/index.common.js",
   "scripts": {
     "lib": "vue-cli-service build --target lib --formats commonjs --name index index.ts",
     "clean": "rm -rf lib"
