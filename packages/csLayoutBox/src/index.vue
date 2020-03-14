@@ -23,7 +23,7 @@ export default class Layout extends Vue {
 <style lang="scss" scoped>
 .layout-wrapper{
   width: 100%;
-  height: 100%;
+  height: 1000px;
   display: flex;
   justify-content: center;
   background-color: #F4F4F4;

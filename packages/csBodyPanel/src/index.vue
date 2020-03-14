@@ -17,6 +17,9 @@
                 </li>
             </ul>
         </div>
+         <div class="header-nav-panel-aside">
+                image panel
+        </div>
     </div>
 </template>
 <script lang="ts">
@@ -108,13 +111,17 @@ export default Vue.extend({
 </script>
 <style lang="scss" scoped>
 .wrapper-panel{
-    width: 100%;
-    height: 100%;
+    width: calc(100% - 28px);
+    height: calc(100% - 20px);
     min-width: 790px;
+    z-index: 100;
     background-color: #ffffff;
-    padding: 20px;
+    padding: 20px 0 0 20px;
     border: 2px solid #f7f7f7;
     box-shadow: 2px 0 5px rgba(0,0,0,.3);
+    display: grid;
+    grid-template-columns: auto 198px;
+    grid-template-rows: 100%;
     .header-nav-panel{
         width: 100%;
         height: 100%;
@@ -127,7 +134,11 @@ export default Vue.extend({
                 font-size: 14px;
                 color: #fff;
                 padding: 0 10px;
+                text-decoration: none;  
                 line-height: 24px;
+                &:hover{
+                  color:red;
+                }
             }
             svg{
                 stroke:#fff;
@@ -136,7 +147,7 @@ export default Vue.extend({
         }
         }
         .header-nav-panel-body{
-            padding: 10px 0 0 20px;
+            padding: 10px 0 0 0;
             .header-nav-panel-body-header{
                 width: 80px;
                 display: flex;
@@ -144,6 +155,7 @@ export default Vue.extend({
                 margin-right: 10px;
             }
             li{
+                white-space: nowrap;
                 height: 32px;
                 display: flex;
                 align-items: center;
@@ -154,16 +166,26 @@ export default Vue.extend({
                 }
                 a{
                  height: 16px;
+                 text-decoration: none;  
                  line-height: 16px;
                  margin: 3px 0px;
                  font-size: 12px;
                  font:12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
                  color:#333;
                  padding: 0 7px;
+                 white-space: nowrap;
+                 &:hover{
+                    color:red;
+                    }
                 }
             }
         }
-    }   
+    }  
+    .header-nav-panel-aside{
+        width: 168px;
+        height: 100%;
+        margin: 0 15px;
+    } 
     ul{
         display: flex;
         flex-direction: row;
@@ -175,12 +197,5 @@ export default Vue.extend({
             align-items: center;
         }
     }
-    a{       
-        text-decoration: none;
-        
-      }
-      a:hover{
-          color:red;
-      }
 }
 </style>
