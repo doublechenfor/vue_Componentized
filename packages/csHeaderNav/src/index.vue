@@ -4,9 +4,7 @@
         <div class="header-tips">
             <ul>
                 <li>
-                    <svg>
-                    <use :xlink:href="require('../../icons/cursor.svg')"/>
-                    </svg>
+                    <svgIcon iconClass="cursor" />
                     <a href="">湖北</a>
                 </li>
             </ul>
@@ -18,9 +16,7 @@
             <ul>
             <li v-for="(item,index) in navArray" :key="index">
                 <a href="">{{item.title}}</a>
-                <svg>
-                <use xlink:href="#icon-chevron-down"/>
-                </svg>
+                <svgIcon iconClass="chevron-down" />
             </li>
             </ul>
         </div>
@@ -30,9 +26,13 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
+import svgIcon from 'cs-com-csicons-svg'
 export default Vue.extend({
   name: "headernav",
   props: {},
+  components:{
+      svgIcon
+  },
   data() {
     return {
       navArray: [
