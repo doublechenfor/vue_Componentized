@@ -1,11 +1,13 @@
 import layoutBox from 'cs-com-cslayoutbox'
 import headerBox from 'cs-com-csheaderbox'
 import headernav from 'cs-com-csheaderbox-nav'
+import headersearch from 'cs-com-csheaderbox-search'
 
 const components = [
     layoutBox,
     headerBox,
-    headernav
+    headernav,
+    headersearch
 ]
 declare module "vue/types/vue" {
     interface VueConstructor {

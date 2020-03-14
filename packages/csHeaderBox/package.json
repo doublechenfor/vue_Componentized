@@ -10,12 +10,9 @@
     "lib": "vue-cli-service build --target lib --formats commonjs --name index index.ts",
     "clean": "rm -rf dist"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/doublechenfor/vue_ts_test.git"
+  "dependencies": {
+    "cs-com-csheaderbox-search": "0.0.1",
+    "cs-com-csheaderbox-nav": "0.0.1"
   },
   "bugs": {
     "url": "https://github.com/doublechenfor/vue_ts_test/issues"

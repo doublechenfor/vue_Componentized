@@ -16,7 +16,7 @@
             <ul>
             <li v-for="(item,index) in navArray" :key="index">
                 <a href="">{{item.title}}</a>
-                <svgIcon iconClass="chevron-down" />
+                <svgIcon v-if="item.tree" iconClass="chevron-down" />
             </li>
             </ul>
         </div>
@@ -105,8 +105,8 @@ export default Vue.extend({
   }
   svg{
       color:#999999;
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
   }
 }
 </style>

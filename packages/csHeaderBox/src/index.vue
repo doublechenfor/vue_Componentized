@@ -1,15 +1,18 @@
 <template>
   <div>
-    <headernav/>
+    <headernav />
+    <headersearch />
   </div>
 </template>
 <script lang="ts">
 import Vue from "vue";
-import headernav from 'cs-com-csheaderbox-nav'
+import headernav from "cs-com-csheaderbox-nav";
+import headersearch from "cs-com-csheaderbox-search";
 export default Vue.extend({
   name: "headerBox",
-  components:{
-    headernav
+  components: {
+    headernav,
+    headersearch
   },
   mounted() {}
 });

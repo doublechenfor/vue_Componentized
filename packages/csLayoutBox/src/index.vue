@@ -1,10 +1,16 @@
 <template>
-  <div>ppplll</div>
+  <div>
+    <headerBox />
+  </div>
 </template>
 <script lang="ts">
-import Vue from "vue";
-export default Vue.extend({
-  name: "Layout",
+import headerBox from "cs-com-csheaderbox";
+import { Component, Vue } from "vue-property-decorator";
+
+@Component({
+  components: { headerBox }
+})
+export default class Layout extends Vue {
   mounted() {}
-});
+}
 </script>

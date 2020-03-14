@@ -16,7 +16,8 @@
     "cs-com-csheaderbox": "0.0.4",
     "cs-com-cslayoutbox": "0.0.1",
     "cs-com-csheaderbox-nav": "0.0.1",
-    "cs-com-csicons-svg": "0.0.1"
+    "cs-com-csicons-svg": "0.0.1",
+    "cs-com-csheaderbox-search": "0.0.1"
   },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"

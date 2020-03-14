@@ -1,7 +1,6 @@
 <template>
   <div>
     <!-- <h2>{{timeCutDown}}</h2> -->
-    <headerBox />
     <layoutBox />
   </div>
 </template>

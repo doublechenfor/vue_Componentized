@@ -1,19 +1,11 @@
 {
-  "name": "cs-com-csicons-svg",
+  "name": "cs-com-csheaderbox-search",
   "version": "0.0.1",
   "description": "> TODO: description",
   "author": "chenshuang99 <chenshuang_soleage@163.com>",
   "homepage": "https://github.com/doublechenfor/vue_Componentized#readme",
   "license": "ISC",
-  "main": "index.js",
-  "scripts": {
-    "lib": "vue-cli-service build --target lib --formats commonjs --name index index.ts",
-    "clean": "rm -rf lib"
-  },
-  "devDependencies": {
-    "svg-sprite-loader": "^4.1.6",
-    "webpack-node-externals": "^1.7.2"
-  },
+  "main": "index.ts",
   "bugs": {
     "url": "https://github.com/doublechenfor/vue_Componentized/issues"
   }

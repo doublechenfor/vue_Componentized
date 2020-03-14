@@ -12,15 +12,8 @@
   "files": [
     "lib"
   ],
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/doublechenfor/vue_Componentized.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+  "dependencies": {
+    "cs-com-csheaderbox": "0.0.4"
   },
   "bugs": {
     "url": "https://github.com/doublechenfor/vue_Componentized/issues"
