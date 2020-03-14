@@ -1,10 +1,10 @@
-import headerNav from './src/index.vue'
+import headerBox from './src/index.vue'
 declare module "vue/types/vue" {
     interface VueConstructor {
         install: any
     }
 }
-headerNav.install = function (Vue: any) {
-    Vue.component(headerNav.name, headerNav)
+headerBox.install = function (Vue: any) {
+    Vue.component(headerBox.name, headerBox)
 }
-export default headerNav
+export default headerBox

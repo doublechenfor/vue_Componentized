@@ -89,10 +89,6 @@ export default Vue.extend({
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            img{
-                width: 12px;
-                height: 12px;
-            }
         }
     a{
           color: #A6A6A7;
