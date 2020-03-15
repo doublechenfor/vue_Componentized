@@ -10,7 +10,7 @@
     <div class="center-nav">
       <div class="fixed-img"></div>     
     </div>
-     <div class="float-img"></div>
+     <div v-if="showFloatImg" class="float-img"></div>
     <div class="right-nav"></div>
           <bodypanel :showBodyPanel="showBodyPanel" 
       @eventEmit="handleEvent" :headernav="headernav" 
@@ -20,7 +20,8 @@
 <script lang="ts">
 import Vue from "vue";
 import bodypanel from "cs-com-csbodypanel";
-import  Details  from '../data'
+import {navDetails as Details,headernav as headerNav} from '../data'
+import throttle from 'lodash/throttle'
 export default Vue.extend({
   name: "bodyBox",
   components: {
@@ -36,19 +37,33 @@ export default Vue.extend({
         { title: "商用电器", url: 'www.baidu.com' },
         { title: "以旧换新", url: 'www.baidu.com' },
       ],
-       headernav: [
-        { title: "家电馆", url: 'www.baidu.com'},
-        { title: "家电专卖", url: 'www.baidu.com' },
-        { title: "家电服务", url: 'www.baidu.com' },
-        { title: "企业采购", url: 'www.baidu.com' },
-        { title: "商用电器", url: 'www.baidu.com' },
-        { title: "以旧换新", url: 'www.baidu.com' },
-      ],
       showBodyPanel:false,
-      navDetails:[{}]
+      navDetails:[{}],
+      headernav:{},
+      showwidth:function(){},
+      showFloatImg:true
       }
   }, 
+  created(){
+    this.headernav=headerNav   
+    this.showwidth=throttle(this.getWindowSize)   
+  },
+  mounted(){
+    this.addEventListener()
+  },
     methods:{
+        addEventListener(){
+            window.addEventListener('resize',this.showwidth)
+        },
+        removeEventListener(){
+            window.removeEventListener('resize',this.showwidth)
+        },
+        getWindowSize(){
+            window.innerWidth>=1330?this.showFloatImg=true:this.showFloatImg=false
+        }, 
+        /** mouseover
+         * li的鼠标over事件,控制右侧面板&获取数据
+         */
         handleMouseOver(res){
             if(res.target && res.target.dataset.mark==='hover')
                 {
@@ -56,6 +71,11 @@ export default Vue.extend({
                     this.showBodyPanel=true
                 }
         },
+        /**处理事件
+         *  数据传递&通知事件都在着通过类别分发
+         * showpanel:鼠标leave面板触发(组件单独使用亦可)
+         * leave:鼠标leave外面wrapper触发
+         */
         handleEvent(res){
             switch(res.type){
                 case 'showPanel':
@@ -66,6 +86,9 @@ export default Vue.extend({
                 break;
             }
         },
+        /**处理数据
+         * 向panel中赋值外部数据
+         */
         handlePanelData(index){
             let num=Number(index)
             if(num===NaN) return
@@ -76,7 +99,13 @@ export default Vue.extend({
              }
             })           
         }
-    }
+    },
+    /**防止内存泄漏
+     * 加上destroy
+     */
+    destroyed(){
+      this.removeEventListener()
+    },
 });
 </script>
 <style lang="scss" scoped>
