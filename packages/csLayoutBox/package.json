@@ -1,6 +1,6 @@
 {
   "name": "cs-com-cslayoutbox",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "> TODO: description",
   "author": "chenshuang <chenshuang_soleage@163.com.cn>",
   "homepage": "https://github.com/doublechenfor/vue_Componentized#readme",
@@ -13,8 +13,8 @@
     "lib"
   ],
   "dependencies": {
-    "cs-com-csheaderbox": "0.0.4",
-    "cs-com-csbodybox": "0.0.1"
+    "cs-com-csbodybox": "^0.0.5",
+    "cs-com-csheaderbox": "^0.0.5"
   },
   "bugs": {
     "url": "https://github.com/doublechenfor/vue_Componentized/issues"

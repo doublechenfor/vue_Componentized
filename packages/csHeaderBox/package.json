@@ -1,6 +1,6 @@
 {
   "name": "cs-com-csheaderbox",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "> TODO: description",
   "author": "chenshuang <chenshuang_soleage@163.com.cn>",
   "homepage": "https://github.com/doublechenfor/vue_ts_test#readme",
@@ -11,8 +11,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "cs-com-csheaderbox-search": "0.0.1",
-    "cs-com-csheaderbox-nav": "0.0.1"
+    "cs-com-csheaderbox-nav": "^0.0.5",
+    "cs-com-csheaderbox-search": "^0.0.5"
   },
   "bugs": {
     "url": "https://github.com/doublechenfor/vue_ts_test/issues"
