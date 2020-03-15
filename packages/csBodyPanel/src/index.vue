@@ -1,5 +1,6 @@
 <template>
-    <div class="wrapper-panel">
+    <transition name="fade">
+    <div class="wrapper-panel" v-if="isShow" @mouseover="mouseEvent('hover')" @mouseleave="mouseEvent('leave')">
         <div class="header-nav-panel">
             <ul class="header-nav-panel-header">
                 <li v-for=" (item,index) in headernav" :key="index">
@@ -21,6 +22,7 @@
                 image panel
         </div>
     </div>
+    </transition>
 </template>
 <script lang="ts">
 import Vue from "vue";
@@ -30,86 +32,56 @@ export default Vue.extend({
   components:{
       svgIcon
   },
-  data(){
-      return{
-        headernav: [
-        { title: "家电馆", url: 'www.baidu.com'},
-        { title: "家电专卖", url: 'www.baidu.com' },
-        { title: "家电服务", url: 'www.baidu.com' },
-        { title: "企业采购", url: 'www.baidu.com' },
-        { title: "商用电器", url: 'www.baidu.com' },
-        { title: "以旧换新", url: 'www.baidu.com' },
-      ],
-      navDetails: [
-        { 
-            category: "电视", 
-            list: [
-                {title:'超薄电视',url:'www.google.cn'},
-                {title:'超薄电视',url:'www.google.cn'},
-                {title:'超薄电视',url:'www.google.cn'},
-                {title:'超薄电视',url:'www.google.cn'},
-                {title:'超薄电视',url:'www.google.cn'},
-                {title:'超薄电视',url:'www.google.cn'},
-                {title:'超薄电视',url:'www.google.cn'},
-                {title:'超薄电视',url:'www.google.cn'},
-                {title:'超薄电视',url:'www.google.cn'},
-            ]
-        },
-        { category: "空调", list: [
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-        ] },
-        { category: "洗衣机", list: [
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-        ] },
-        { category: "冰箱", list: [
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-        ] },
-        { category: "厨卫大电", list: [
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-
-        ] },
-        { category: "厨房小店", list: [
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},
-            {title:'超薄电视',url:'www.google.cn'},           
-        ]},
-      ],  
+  props:{
+      showBodyPanel:{
+          type:Boolean,
+          default:false
+      },
+      headernav:{
+          type:Array,
+          default:[]
+      },
+      navDetails:{
+          type:Array,
+          default:[]
       }
+  },
+  watch:{
+      showBodyPanel:{
+          deep:true,
+          immediate:true,
+          handler(val){
+              this.isShow=val
+          }
+      }
+  },
+  data(){
+      return{     
+      isShow:false
+      }
+  },
+  methods:{
+      mouseEvent(type){
+        switch(type){
+            case 'hover':
+                this.isShow=true
+                break;
+            case 'leave':
+                this.isShow=false
+                this.$emit('eventEmit',{type:'showPanel',data:false})
+                break;                  
+        }
+    }
   }
 });
 </script>
 <style lang="scss" scoped>
+.fade-v-enter,.fade-v-leave{
+    opacity: 0;
+}
+.fade-v-enter-active,.fade-v-leave-active{
+    opacity: 1;
+}
 .wrapper-panel{
     width: calc(100% - 28px);
     height: calc(100% - 20px);
@@ -169,7 +141,6 @@ export default Vue.extend({
                  text-decoration: none;  
                  line-height: 16px;
                  margin: 3px 0px;
-                 font-size: 12px;
                  font:12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
                  color:#333;
                  padding: 0 7px;
