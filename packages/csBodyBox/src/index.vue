@@ -10,9 +10,9 @@
     <div class="center-nav">
       <div class="fixed-img"></div>     
     </div>
-     <div v-if="showFloatImg" class="float-img"></div>
+     <div v-if="showFloatImg" class="float-img" :class="!showFloatImg?'hide-floatImg':''"></div>
     <div class="right-nav"></div>
-          <bodypanel :showBodyPanel="showBodyPanel" 
+    <bodypanel :showBodyPanel="showBodyPanel" 
       @eventEmit="handleEvent" :headernav="headernav" 
       :navDetails="navDetails"/>
   </div>
@@ -52,9 +52,18 @@ export default Vue.extend({
     this.addEventListener()
   },
     methods:{
+        /**通过addEventListener
+         * 方便进行remove
+         * remove和add时,调用的函数必须相同,且remove时不允许匿名函数
+         */
         addEventListener(){
             window.addEventListener('resize',this.showwidth)
         },
+        /**remove
+         * 在vue中事件监听时,事件必须挂载在vue上(必须以this.**调用)
+         * 且在开发过程中,将方法放在methods中,remove无法执行,
+         * 最后发现,需要将调用的方法在created中声明
+         */
         removeEventListener(){
             window.removeEventListener('resize',this.showwidth)
         },
@@ -114,10 +123,12 @@ export default Vue.extend({
   min-width: 990px;
   height: 100%;
   display: grid;
+  justify-content: center;
   grid-template-columns: 200px 600px auto 200px;
   grid-template-rows: 100%;
   .left-nav,
   .right-nav {
+    width:190px;
     height: 480px;
     background-color: #ffffff;
   }
@@ -136,6 +147,9 @@ export default Vue.extend({
         width: 190px;
         height: 100%;
     }
+  .hide-floatImg{
+      width: 0px;
+  }  
   .left-nav {
     padding-right: 10px;
     font-size: 14px;
