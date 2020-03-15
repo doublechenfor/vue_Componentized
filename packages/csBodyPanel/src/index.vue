@@ -43,7 +43,7 @@ export default Vue.extend({
       },
       navDetails:{
           type:Array,
-          default:[]
+          default:[{}]
       }
   },
   watch:{
@@ -83,10 +83,12 @@ export default Vue.extend({
     opacity: 1;
 }
 .wrapper-panel{
-    width: calc(100% - 28px);
-    height: calc(100% - 20px);
-    min-width: 790px;
-    z-index: 100;
+    position: relative;
+    top: -480px;
+    left: 190px;
+    width: 970px;
+    height: 460px;
+    z-index: 10;
     background-color: #ffffff;
     padding: 20px 0 0 20px;
     border: 2px solid #f7f7f7;

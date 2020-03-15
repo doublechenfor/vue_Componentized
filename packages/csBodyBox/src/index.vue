@@ -8,11 +8,13 @@
       </ul>
     </div>
     <div class="center-nav">
-      <bodypanel :showBodyPanel="showBodyPanel" 
+      <div class="fixed-img"></div>     
+    </div>
+     <div class="float-img"></div>
+    <div class="right-nav"></div>
+          <bodypanel :showBodyPanel="showBodyPanel" 
       @eventEmit="handleEvent" :headernav="headernav" 
       :navDetails="navDetails"/>
-    </div>
-    <div class="right-nav"></div>
   </div>
 </template>
 <script lang="ts">
@@ -83,7 +85,7 @@ export default Vue.extend({
   min-width: 990px;
   height: 100%;
   display: grid;
-  grid-template-columns: 200px auto 200px;
+  grid-template-columns: 200px 600px auto 200px;
   grid-template-rows: 100%;
   .left-nav,
   .right-nav {
@@ -92,8 +94,19 @@ export default Vue.extend({
   }
   .center-nav {
     width: 100%;
-    height: 100%;
+    height: 100%;   
+    .fixed-img{
+        background-color: pink;
+        width: 590px;
+        height: 100%;
+        margin-right: 10px;     
+    } 
   }
+  .float-img{
+        background-color: green;
+        width: 190px;
+        height: 100%;
+    }
   .left-nav {
     padding-right: 10px;
     font-size: 14px;
