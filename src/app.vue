@@ -49,6 +49,6 @@ button, input, select, textarea { font-size:100%; }
 table { border-collapse:collapse; border-spacing:0; } 
 html,body{
   min-width: 990px;
-  overflow: hidden;
+//   overflow: hidden;
 }
 </style>
